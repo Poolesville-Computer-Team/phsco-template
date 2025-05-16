@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "random": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "xutility": "cpp",
+        "xiosbase": "cpp"
+    }
+}
