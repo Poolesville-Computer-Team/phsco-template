@@ -1,0 +1,84 @@
+% Background Color
+\usepackage[table,xcdraw]{xcolor}
+\definecolor{bg}{HTML}{FFFFFF}
+\definecolor{phscoGold}{HTML}{FFCD4D}
+\definecolor{text}{HTML}{000000}
+
+\pagecolor{bg}
+\color{text}
+
+\raggedright
+
+% Font Families
+\usepackage{unicode-math}
+\usepackage{fontspec}
+\setmainfont[
+  Path = ./statements/fonts/poppins/,
+  UprightFont = *-Regular,
+  ItalicFont = *-Italic,
+  BoldFont = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic
+]{Poppins}
+\setmonofont[
+  Path = ./statements/fonts/ibm/,
+  Extension = .ttf,
+  UprightFont = *-Text,
+  BoldFont = *-Bold
+]{IBMPlexMono}
+\setmathfont[Scale=1.2]{Latin Modern Math}
+
+% Bold Font Formatting
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{text}{\oldtextbf{#1}}}
+
+% Spacing Formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt} % reduced from 10pt for tighter look
+\setlength{\hangindent}{0pt}
+
+% Heading Formatting
+\usepackage{titlesec}
+
+% Problem Names (H1)
+\titleformat{\section}
+  {\color{text}\fontsize{20}{0}\bfseries}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% Subheadings (H2)
+\titleformat{\subsection}
+  {\color{text}\fontsize{16}{16}\bfseries}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{2pt}{0pt}
+
+% Problem Constraints (H3)
+\titleformat{\subsubsection}
+  {\color{text}\fontsize{10}{0}\itshape}
+  {}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{2pt}{0pt}
+
+% Sample I/O (paragraph)
+\titleformat{\paragraph}
+  {\color{text}\fontsize{12}{12}\bfseries}
+  {}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{2pt}{0pt}
+
+% Sample I/O (subparagraph)
+\titleformat{\subparagraph}
+  {\color{text}\fontsize{10}{0}\bfseries}
+  {}{0pt}{}
+\titlespacing*{\subparagraph}{0pt}{1pt}{0pt}
+
+% Corner Icon
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
+\AddToShipoutPictureBG{
+  \put(\LenToUnit{\paperwidth},\LenToUnit{\paperheight}){%
+    \makebox(-1cm,-1cm)[tr]{\includegraphics[width=4cm]{statements/logo.png}}%
+  }
+}
+
+% Misc. Formatting
+\binoppenalty=10000
+\relpenalty=10000
